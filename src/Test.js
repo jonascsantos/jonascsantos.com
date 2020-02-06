@@ -1,12 +1,13 @@
 import React from "react"
 import Thumbnail from './Thumbnails.js'
+import logoTwitter from './twitter.svg';
 function Test(props) {
   return (
     <div>
       <h1>Test</h1>
       <Thumbnail
         link="/twitter"
-        image="http://twitter-image-url.jpg"
+        image={logoTwitter}
         title="Twitter Newsfeed"
         category="Mobile App"
       />
