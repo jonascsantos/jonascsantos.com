@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import './App.css';
 import Typical from 'react-typical'
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="https://avatars1.githubusercontent.com/u/15957868?s=460&u=0c7bfe98e60a74ee427a1d053f3603d0c4848e04&v=4" className="App-logo" alt="logo" />
         <h1>Hi, I'm Jonas dos Santos</h1>
         <p>
           I'm a {' '}
@@ -24,9 +24,7 @@ function App() {
               "designer (like a 6.2/10 xD)",
               1500,
               "dreamer",
-              2000,
-
-
+              3000,
             ]}
           />
 
@@ -35,5 +33,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
