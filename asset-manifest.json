@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/jonascsantos.com/static/css/main.5f361e03.chunk.css",
+    "main.js": "/jonascsantos.com/static/js/main.ff909b92.chunk.js",
+    "main.js.map": "/jonascsantos.com/static/js/main.ff909b92.chunk.js.map",
+    "runtime-main.js": "/jonascsantos.com/static/js/runtime-main.21ee42f9.js",
+    "runtime-main.js.map": "/jonascsantos.com/static/js/runtime-main.21ee42f9.js.map",
+    "static/js/2.1e30868a.chunk.js": "/jonascsantos.com/static/js/2.1e30868a.chunk.js",
+    "static/js/2.1e30868a.chunk.js.map": "/jonascsantos.com/static/js/2.1e30868a.chunk.js.map",
+    "index.html": "/jonascsantos.com/index.html",
+    "precache-manifest.46da1a918c21311d27ee42608346b824.js": "/jonascsantos.com/precache-manifest.46da1a918c21311d27ee42608346b824.js",
+    "service-worker.js": "/jonascsantos.com/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/jonascsantos.com/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.1e30868a.chunk.js.LICENSE.txt": "/jonascsantos.com/static/js/2.1e30868a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/jonascsantos.com/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21ee42f9.js",
+    "static/js/2.1e30868a.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.ff909b92.chunk.js"
+  ]
+}
