@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://jonascsantos.github.io/jonascsantos.com",
+  "homepage": "https://jonascsantos.com",
   "eslintConfig": {
     "extends": "react-app"
   },
