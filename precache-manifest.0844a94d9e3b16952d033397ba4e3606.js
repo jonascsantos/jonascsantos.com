@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bd7e7ad8ef065af7752ab1b504896376",
+    "revision": "58edacb96d6d86acc8ff1aa483f43aaf",
     "url": "/jonascsantos.com/index.html"
   },
   {
-    "revision": "4a940819d69526d80bd8",
+    "revision": "b4f4a12fdf1ed6037360",
     "url": "/jonascsantos.com/static/css/main.063edc6b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jonascsantos.com/static/js/2.fe3f7097.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4a940819d69526d80bd8",
-    "url": "/jonascsantos.com/static/js/main.62ef95ff.chunk.js"
+    "revision": "b4f4a12fdf1ed6037360",
+    "url": "/jonascsantos.com/static/js/main.f1a2b00a.chunk.js"
   },
   {
     "revision": "8d0cc476c4e6cfae16ef",
