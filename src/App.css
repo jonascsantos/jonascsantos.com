@@ -100,6 +100,40 @@ textarea {
   outline: none;
 }
 
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+.icon-wrap {
+  margin-top: 20px;
+}
+
+.icon-wrap .icon {
+  background: #f6f6f6;
+  cursor: pointer;
+  height: 5em;
+  margin: 0 15px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+}
+
+ion-icon {
+  font-size: 5em;
+}
+
+ion-icon {
+  color: #232d36;
+}
+
 /*********** Base Containers ***********/
 
 .page {
@@ -125,12 +159,12 @@ textarea {
 }
 
 .shadowed:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
   box-shadow: 0px 5px 20px var(--box-shadow);
 }
 
 .translucent {
-  opacity: 0.7;
+  opacity: 0.9;
   transition: all 0.7s ease;
 }
 
@@ -142,21 +176,18 @@ textarea {
 /*********** Responsive ***********/
 
 @media (min-width: 0px) and (max-width: 799px) {
-  .section {
-    padding-left: 40px;
-    padding-right: 40px;
+  .icon-wrap .icon {
+    background: #f6f6f6;
+    height: 3em;
+    transition: all 0.7s ease;
+  }
+  
+  ion-icon {
+    font-size: 3em;
   }
 
-  .showcase-bubble-container {
-    padding: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  .personality-section-container {
-    padding: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  p {
+    font-size: 1em;
   }
 }
 
