@@ -28,7 +28,7 @@ function App() {
             loop={Infinity}
             wrapper="b"
             steps={[
-              'a developer 💻',
+              'a Fullstack Developer 💻',
               1500,
               'a Brazilian student 🇧🇷',
               1500,
@@ -60,6 +60,11 @@ function App() {
           <a href="https://twitter.com/jonascsantos_" onClick={() => ClickHandler('twitter')}>
             <div class="flex shadowed translucent icon">
               <ion-icon name="logo-twitter"></ion-icon>
+            </div>
+          </a>
+          <a href="mailto:jonas.cassiano@hotmail.com" onClick={() => ClickHandler('email')}>
+            <div class="flex shadowed translucent icon">
+              <ion-icon name="at"></ion-icon>
             </div>
           </a>
         </div>

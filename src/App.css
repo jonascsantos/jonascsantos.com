@@ -178,16 +178,20 @@ ion-icon {
 @media (min-width: 0px) and (max-width: 799px) {
   .icon-wrap .icon {
     background: #f6f6f6;
-    height: 3em;
+    height: 2.5em;
     transition: all 0.7s ease;
   }
   
   ion-icon {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   p {
-    font-size: 1em;
+    font-size: 0.9em;
+  }
+
+  h1 {
+    font-size: 1.5em;
   }
 }
 
