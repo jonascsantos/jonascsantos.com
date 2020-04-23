@@ -19,6 +19,36 @@ function App() {
 
   return (
     <div className="App">
+      <header className="header">
+        <nav class="nav-main">
+          <ul>
+            <li>
+              <button class="nav__toggler nav__toggler--close">
+                <span></span>
+                <span></span>
+              </button>
+            </li>
+            <li>
+              <a aria-current="page" class="" href="/">Home</a>
+            </li>
+            <li>
+              <a href="/projects/">Projects</a></li><li><a href="/about/">About</a>
+            </li>
+            <li>
+              <a href="https://blog.alexdevero.com/" rel="noopener noreferrer" target="_blank">Blog</a>
+            </li>
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          </ul>
+          <button class="nav__toggler nav__toggler--toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </header>
+
       <div className="App-header">
         <img src="https://avatars1.githubusercontent.com/u/15957868?s=460&u=0c7bfe98e60a74ee427a1d053f3603d0c4848e04&v=4" className="App-logo shadowed" alt="logo" />
         <h1>Hi, I'm Jonas dos Santos</h1>
