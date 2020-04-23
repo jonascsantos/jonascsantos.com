@@ -34,7 +34,7 @@
   border: 1vh solid #232d3622;
 }
 
-.App-header {
+.Main {
   background-color:var(--background);
   min-height: 100vh;
   display: flex;

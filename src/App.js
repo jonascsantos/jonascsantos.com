@@ -49,7 +49,7 @@ function App() {
         </nav>
       </header>
 
-      <div className="App-header">
+      <main className="Main">
         <img src="https://avatars1.githubusercontent.com/u/15957868?s=460&u=0c7bfe98e60a74ee427a1d053f3603d0c4848e04&v=4" className="App-logo shadowed" alt="logo" />
         <h1>Hi, I'm Jonas dos Santos</h1>
         <p>
@@ -98,7 +98,7 @@ function App() {
             </div>
           </a>
         </div>
-      </div>
+      </main>
     </div >
   );
 }
