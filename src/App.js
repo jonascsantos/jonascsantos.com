@@ -45,7 +45,7 @@ function App() {
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
           <div>
-            <header className="header">
+            {/* <header className="header">
               <nav class="nav">
                 <ul>
                   <li>
@@ -62,7 +62,7 @@ function App() {
                     <a href="/projects/">Projects</a></li><li><a href="/about/">About</a>
                   </li>
                   <li>
-                    <a href="https://blog.alexdevero.com/" rel="noopener noreferrer" target="_blank">Blog</a>
+                    <a href="https://blog.jonascsantos.com/" rel="noopener noreferrer" target="_blank">Blog</a>
                   </li>
                   <li>
                     <a href="/contact/">Contact</a>
@@ -74,7 +74,7 @@ function App() {
                   <span></span>
                 </button>
               </nav>
-            </header>
+            </header> */}
 
             <main className="Main">
               <img
