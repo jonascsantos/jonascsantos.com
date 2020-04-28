@@ -3,7 +3,14 @@ import './App.css';
 import Typical from 'react-typical'
 import ReactGa from 'react-ga'
 import { useLocation } from "react-router-dom";
-import { Loader } from './components';
+import { Loader, Nav } from './components';
+import styled from 'styled-components'
+
+const StyledContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
 function App() {
   const isHome = true;
@@ -43,44 +50,18 @@ function App() {
       {isLoading && isHome ? (
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
-          <div>
-            {/* <header className="header">
-              <nav class="nav">
-                <ul>
-                  <li>
-                    <button class="nav__toggler nav__toggler--close">
-                      <span></span>
-                      <span></span>
-                    </button>
-                  </li>
-                  <li>
+          <StyledContent>
 
-                    <a aria-current="page" class="" href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="/projects/">Projects</a></li><li><a href="/about/">About</a>
-                  </li>
-                  <li>
-                    <a href="https://blog.jonascsantos.com/" rel="noopener noreferrer" target="_blank">Blog</a>
-                  </li>
-                  <li>
-                    <a href="/contact/">Contact</a>
-                  </li>
-                </ul>
-                <button class="nav__toggler nav__toggler--toggle">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
-              </nav>
-            </header> */}
-
+            <Nav />
             <main className="Main">
-              <img
-                src="https://avatars1.githubusercontent.com/u/15957868?s=460&u=0c7bfe98e60a74ee427a1d053f3603d0c4848e04&v=4"
-                className="Photo shadowed"
-                alt="logo"
-              />
+              <div>
+
+                <img
+                  src="https://avatars1.githubusercontent.com/u/15957868?s=460&u=0c7bfe98e60a74ee427a1d053f3603d0c4848e04&v=4"
+                  className="Photo shadowed"
+                  alt="logo"
+                />
+              </div>
               <h1>Hi, I'm Jonas dos Santos</h1>
               <p>
                 I'm {' '}
@@ -129,7 +110,7 @@ function App() {
                 </a>
               </div>
             </main>
-          </div >
+          </StyledContent>
         )}
     </div>
   );
