@@ -37,7 +37,7 @@ const StyledContainer = styled.header`
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: ${colors.navy};
+  background-color: "black";
   transition: ${theme.transition};
   z-index: 11;
   filter: none !important;
@@ -58,9 +58,9 @@ const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: ${colors.lightestSlate};
-  font-family: ${fonts.SFMono};
-  counter-reset: item 0;
+  color: ${colors.black};
+  font-family: ${fonts.Raleway};
+  font-weight: 400;
   z-index: 12;
 `;
 
@@ -165,21 +165,14 @@ const StyledListItem = styled.li`
   margin: 0 10px;
   position: relative;
   font-size: ${fontSizes.smish};
-  counter-increment: item 1;
-  &:before {
-    content: '0' counter(item) '.';
-    text-align: right;
-    color: ${colors.green};
-    font-size: ${fontSizes.xs};
-  }
 `;
+
 const StyledListLink = styled.a`
   padding: 12px 10px;
 `;
 const StyledResumeButton = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
-  font-size: ${fontSizes.smish};
 `;
 
 //-----------------
@@ -215,22 +208,26 @@ const Nav = (props) => {
     const fadeDownClass = isHome ? 'fadedown' : '';
     const navLinks = [
         {
-          name: 'About',
-          url: '/#about',
+            name: 'About',
+            url: '/#about',
         },
         {
-          name: 'Experience',
-          url: '/#jobs',
+            name: 'Projects',
+            url: '/#projects',
         },
         {
-          name: 'Work',
-          url: '/#projects',
+            name: 'Experience',
+            url: '/#jobs',
         },
+        // {
+        //     name: 'Blog',
+        //     url: '/#blog',
+        // },
         {
-          name: 'Contact',
-          url: '/#contact',
+            name: 'Contact',
+            url: '/#contact',
         },
-      ];
+    ];
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -303,9 +300,9 @@ const Nav = (props) => {
                     {isMounted && (
                         <CSSTransition classNames={fadeClass} timeout={timeout}>
                             <StyledLogo tabindex="-1">
-                                    <a href="/" aria-label="home">
-                                        <IconLogo />
-                                    </a>
+                                <a href="/" aria-label="home">
+                                    <IconLogo />
+                                </a>
                             </StyledLogo>
                         </CSSTransition>
                     )}

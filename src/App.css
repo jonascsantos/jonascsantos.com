@@ -4,7 +4,6 @@
   --p: #747474;
   --h2: #525252;
   --h4: #737373;
-  --link: #777777;
   --link-hover: #0e0e0e;
   --color-brand: #d30320;
   --placeholder-text: #b8b8b8;
@@ -122,7 +121,7 @@ img {
 }
 
 a {
-  color: var(--link);
+  /* color: var(--link); */
   font-size: 18px;
   transition: all 1s ease;
 }

@@ -1,6 +1,6 @@
 import { hex2rgba } from '../utils';
 
-const ACCENT = '#64ffda';
+const ACCENT = 'black';
 const DARK_BG = '#f6f6f6';
 const BG = '#f6f6f6';
 
@@ -13,7 +13,7 @@ const theme = {
     slate: '#8892b0',
     lightSlate: '#a8b2d1',
     lightestSlate: '#ccd6f6',
-    white: '#e6f1ff',
+    white: '#f6f6f6',
     green: ACCENT,
     black: 'black',
     transGreen: hex2rgba(ACCENT, 0.07),
@@ -21,9 +21,7 @@ const theme = {
   },
 
   fonts: {
-    Calibre:
-      'Calibre, San Francisco, SF Pro Text, -apple-system, system-ui, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif',
-    SFMono: 'SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, monospace',
+    Raleway: 'Raleway',
   },
 
   fontSizes: {
