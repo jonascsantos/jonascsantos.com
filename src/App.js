@@ -51,11 +51,11 @@ function App() {
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
           <StyledContent>
-            <Nav isHome={isHome} />
+            <Nav isHome={isHome} ClickHandler={() => ClickHandler('resume')}/>
             <main className="Main">
               <div>
                 <img
-                  src="https://avatars1.githubusercontent.com/u/15957868?s=460&u=0c7bfe98e60a74ee427a1d053f3603d0c4848e04&v=4"
+                  src="./images/me.jpeg"
                   className="Photo shadowed"
                   alt="logo"
                 />

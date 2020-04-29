@@ -93,13 +93,10 @@ const navLinks = [
   //     name: 'Contact',
   //     url: 'https://jonascsantos.com',
   // },
-  {
-    name: 'Resume',
-    url: '/resume.pdf',
-  },
+
 ];
 
-const Menu = ({ menuOpen, toggleMenu }) => {
+const Menu = ({ menuOpen, toggleMenu, ClickHandler}) => {
   const handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
@@ -127,9 +124,14 @@ const Menu = ({ menuOpen, toggleMenu }) => {
                   </NavListItem>
                 ))}
             </NavList>
-            {/* <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">
+            <ResumeLink
+              href="/resume.pdf"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              onClick={() => ClickHandler()}
+            >
               Resume
-          </ResumeLink> */}
+            </ResumeLink>
           </NavLinks>
         </Sidebar>
       </StyledContainer>

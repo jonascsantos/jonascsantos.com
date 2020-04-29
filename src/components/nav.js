@@ -230,10 +230,7 @@ const Nav = (props) => {
         //     name: 'Contact',
         //     url: 'https://jonascsantos.com',
         // },
-        {
-            name: 'Resume',
-            url: '/resume.pdf',
-        },
+    
     ];
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -352,24 +349,26 @@ const Nav = (props) => {
                             </TransitionGroup>
                         </StyledList>
 
-                        {/* <TransitionGroup component={null}>
+                         <TransitionGroup component={null}>
                             {isMounted && (
                                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                                     <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                                         <StyledResumeButton
                                             href="/resume.pdf"
                                             target="_blank"
-                                            rel="nofollow noopener noreferrer">
+                                            rel="nofollow noopener noreferrer"
+                                            onClick={() => props.ClickHandler()}
+                                            >
                                             Resume
                                         </StyledResumeButton>
                                     </div>
                                 </CSSTransition>
                             )}
-                        </TransitionGroup> */}
+                        </TransitionGroup> 
                     </StyledLink>
                 </StyledNav>
 
-                <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
+                <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} ClickHandler={() => props.ClickHandler()} />
             </StyledContainer>
         </Router>
 
