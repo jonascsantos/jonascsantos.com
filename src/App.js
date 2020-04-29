@@ -84,27 +84,27 @@ function App() {
               <div class="icon-wrap flex row">
                 <a href="https://github.com/jonascsantos" onClick={() => ClickHandler('github')}>
                   <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-github"></ion-icon>
+                    <ion-icon name="logo-github" color="dark"></ion-icon>
                   </div>
                 </a>
                 <a href="https://www.linkedin.com/in/jonascsantos" onClick={() => ClickHandler('linkedin')}>
                   <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-linkedin"></ion-icon>
+                    <ion-icon name="logo-linkedin" color="dark"></ion-icon>
                   </div>
                 </a>
                 <a href="https://www.instagram.com/jonas.cass/" onClick={() => ClickHandler('instagram')}>
                   <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-instagram" color="dark"></ion-icon>
                   </div>
                 </a>
                 <a href="https://twitter.com/jonascsantos_" onClick={() => ClickHandler('twitter')}>
                   <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-twitter" color="dark"></ion-icon>
                   </div>
                 </a>
                 <a href="mailto:jonas.cassiano@hotmail.com" onClick={() => ClickHandler('email')}>
                   <div class="flex shadowed translucent icon">
-                    <ion-icon name="at"></ion-icon>
+                    <ion-icon name="at" color="dark"></ion-icon>
                   </div>
                 </a>
               </div>

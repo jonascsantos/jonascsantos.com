@@ -68,13 +68,13 @@ const StyledLogo = styled.div`
   ${mixins.flexCenter};
   a {
     display: block;
-    color: ${colors.green};
+    color: ${colors.black};
     width: 42px;
     height: 42px;
     &:hover,
     &:focus {
       svg {
-        fill: ${colors.transGreen};
+        fill: ${colors.black};
       }
     }
     svg {
