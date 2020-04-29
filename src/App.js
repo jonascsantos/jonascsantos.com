@@ -51,8 +51,7 @@ function App() {
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
           <StyledContent>
-
-            <Nav />
+            <Nav isHome={isHome} />
             <main className="Main">
               <div>
 
