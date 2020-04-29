@@ -71,26 +71,28 @@ const mixins = {
   `,
 
   smallButton: css`
+    display: flex;
     color: ${colors.green};
-    background-color: transparent;
+    background-color: ${colors.white};
     border: 1px solid ${colors.green};
     border-radius: ${theme.borderRadius};
     padding: 0.75rem 1rem;
-    font-size: ${fontSizes.smish};
-    font-family: ${fonts.SFMono};
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
     transition: ${theme.transition};
+    box-shadow: 0px 2px 11px ${colors.boxShadow};
     &:hover,
     &:focus,
     &:active {
-      background-color: ${colors.transGreen};
+      /* transform: scale(1.02); */
+      box-shadow: 0px 5px 20px ${colors.boxShadow};
     }
     &:after {
       display: none !important;
     }
   `,
+
 
   bigButton: css`
     color: ${colors.green};

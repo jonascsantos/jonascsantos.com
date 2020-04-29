@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import Helmet from 'react-helmet'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 import { IconLogo } from './icons';
 import styled from 'styled-components'
@@ -59,6 +60,7 @@ const StyledNav = styled.nav`
   position: relative;
   width: 100%;
   color: ${colors.black};
+  text-decoration: none;
   font-family: ${fonts.Raleway};
   font-weight: 400;
   z-index: 12;
@@ -71,11 +73,10 @@ const StyledLogo = styled.div`
     color: ${colors.black};
     width: 42px;
     height: 42px;
+    opacity: 1;
     &:hover,
     &:focus {
-      svg {
-        fill: ${colors.black};
-      }
+      opacity: 0.5;
     }
     svg {
       fill: none;
@@ -155,6 +156,7 @@ const StyledLink = styled.div`
   align-items: center;
   ${media.tablet`display: none;`};
 `;
+
 const StyledList = styled.ol`
   ${mixins.flexBetween};
   padding: 0;
@@ -165,9 +167,10 @@ const StyledListItem = styled.li`
   margin: 0 10px;
   position: relative;
   font-size: ${fontSizes.smish};
+  text-decoration: none;
 `;
 
-const StyledListLink = styled.a`
+const StyledListLink = styled(Link)`
   padding: 12px 10px;
 `;
 const StyledResumeButton = styled.a`
@@ -291,71 +294,81 @@ const Nav = (props) => {
     //     </header>
     // );
     return (
-        <StyledContainer scrollDirection={scrollDirection}>
-            {/* <Helmet>
+        <Router>
+
+            <StyledContainer scrollDirection={scrollDirection}>
+                {/* <Helmet>
                 <body className={menuOpen ? 'blur' : ''} />
             </Helmet> */}
-            <StyledNav>
-                <TransitionGroup component={null}>
-                    {isMounted && (
-                        <CSSTransition classNames={fadeClass} timeout={timeout}>
-                            <StyledLogo tabindex="-1">
-                                <a href="/" aria-label="home">
-                                    <IconLogo />
-                                </a>
-                            </StyledLogo>
-                        </CSSTransition>
-                    )}
-                </TransitionGroup>
-
-                <TransitionGroup component={null}>
-                    {isMounted && (
-                        <CSSTransition classNames={fadeClass} timeout={timeout}>
-                            <StyledHamburger onClick={toggleMenu}>
-                                <StyledHamburgerBox>
-                                    <StyledHamburgerInner menuOpen={menuOpen} />
-                                </StyledHamburgerBox>
-                            </StyledHamburger>
-                        </CSSTransition>
-                    )}
-                </TransitionGroup>
-
-                <StyledLink>
-                    <StyledList>
-                        <TransitionGroup component={null}>
-                            {isMounted &&
-                                navLinks &&
-                                navLinks.map(({ url, name }, i) => (
-                                    <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
-                                        <StyledListItem
-                                            key={i}
-                                            style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                                            <StyledListLink to={url}>{name}</StyledListLink>
-                                        </StyledListItem>
-                                    </CSSTransition>
-                                ))}
-                        </TransitionGroup>
-                    </StyledList>
-
+                <StyledNav>
                     <TransitionGroup component={null}>
                         {isMounted && (
-                            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                                <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                                    <StyledResumeButton
-                                        href="/resume.pdf"
-                                        target="_blank"
-                                        rel="nofollow noopener noreferrer">
-                                        Resume
-                  </StyledResumeButton>
-                                </div>
+                            <CSSTransition classNames={fadeClass} timeout={timeout}>
+                                <StyledLogo tabindex="-1">
+                                    {isHome ? (
+                                        <a href="/" aria-label="home">
+                                            <IconLogo />
+                                        </a>
+                                    ) : (
+                                            <Link to="/" aria-label="home">
+                                                <IconLogo />
+                                            </Link>
+                                        )}
+                                </StyledLogo>
                             </CSSTransition>
                         )}
                     </TransitionGroup>
-                </StyledLink>
-            </StyledNav>
 
-            {/* <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} /> */}
-        </StyledContainer>
+                    <TransitionGroup component={null}>
+                        {isMounted && (
+                            <CSSTransition classNames={fadeClass} timeout={timeout}>
+                                <StyledHamburger onClick={toggleMenu}>
+                                    <StyledHamburgerBox>
+                                        <StyledHamburgerInner menuOpen={menuOpen} />
+                                    </StyledHamburgerBox>
+                                </StyledHamburger>
+                            </CSSTransition>
+                        )}
+                    </TransitionGroup>
+
+                    <StyledLink>
+                        <StyledList>
+                            <TransitionGroup component={null}>
+                                {isMounted &&
+                                    navLinks &&
+                                    navLinks.map(({ url, name }, i) => (
+                                        <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                                            <StyledListItem
+                                                key={i}
+                                                style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
+                                                <StyledListLink to={url}>{name}</StyledListLink>
+                                            </StyledListItem>
+                                        </CSSTransition>
+                                    ))}
+                            </TransitionGroup>
+                        </StyledList>
+
+                        <TransitionGroup component={null}>
+                            {isMounted && (
+                                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
+                                        <StyledResumeButton
+                                            href="/resume.pdf"
+                                            target="_blank"
+                                            rel="nofollow noopener noreferrer">
+                                            Resume
+                  </StyledResumeButton>
+                                    </div>
+                                </CSSTransition>
+                            )}
+                        </TransitionGroup>
+                    </StyledLink>
+                </StyledNav>
+
+                {/* <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} /> */}
+            </StyledContainer>
+        </Router>
+
     );
 }
 

@@ -18,6 +18,7 @@ const theme = {
     black: 'black',
     transGreen: hex2rgba(ACCENT, 0.07),
     shadowNavy: hex2rgba(DARK_BG, 0.7),
+    boxShadow: 'rgba(0, 0, 0, 0.1)',
   },
 
   fonts: {

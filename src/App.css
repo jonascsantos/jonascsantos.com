@@ -61,18 +61,7 @@ body {
   width: 100%;
   list-style-type: none;
 }
-.footer a,
-.header a {
-  text-decoration: none;
-  color: #111;
-  transition: color 0.25s ease-in-out;
-  transition: color var(--tr-part);
-}
-.footer a:hover,
-.header a:hover {
-  color: #d30320;
-  color: var(--color-brand);
-}
+
 .list--unstyled {
   margin: 0;
 }
@@ -121,14 +110,16 @@ img {
 }
 
 a {
-  /* color: var(--link); */
+  text-decoration: none;
+  opacity: 1;
   font-size: 18px;
   transition: all 1s ease;
+  color: var(--link-hover);
+
 }
 
 a:hover {
-  text-decoration: none;
-  color: var(--link-hover);
+  opacity: 0.5;
 }
 
 :placeholder {
