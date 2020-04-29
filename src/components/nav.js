@@ -210,25 +210,29 @@ const Nav = (props) => {
     const fadeClass = isHome ? 'fade' : '';
     const fadeDownClass = isHome ? 'fadedown' : '';
     const navLinks = [
-        {
-            name: 'About',
-            url: '/#about',
-        },
-        {
-            name: 'Projects',
-            url: '/#projects',
-        },
-        {
-            name: 'Experience',
-            url: '/#jobs',
-        },
+        // {
+        //     name: 'About',
+        //     url: '/#about',
+        // },
+        // {
+        //     name: 'Projects',
+        //     url: '/#projects',
+        // },
+        // {
+        //     name: 'Experience',
+        //     url: '/#jobs',
+        // },
         // {
         //     name: 'Blog',
         //     url: '/#blog',
         // },
+        // {
+        //     name: 'Contact',
+        //     url: 'https://jonascsantos.com',
+        // },
         {
-            name: 'Contact',
-            url: '/#contact',
+            name: 'Resume',
+            url: '/resume.pdf',
         },
     ];
 
@@ -348,7 +352,7 @@ const Nav = (props) => {
                             </TransitionGroup>
                         </StyledList>
 
-                        <TransitionGroup component={null}>
+                        {/* <TransitionGroup component={null}>
                             {isMounted && (
                                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                                     <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
@@ -357,11 +361,11 @@ const Nav = (props) => {
                                             target="_blank"
                                             rel="nofollow noopener noreferrer">
                                             Resume
-                  </StyledResumeButton>
+                                        </StyledResumeButton>
                                     </div>
                                 </CSSTransition>
                             )}
-                        </TransitionGroup>
+                        </TransitionGroup> */}
                     </StyledLink>
                 </StyledNav>
 
