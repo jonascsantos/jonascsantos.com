@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import Helmet from 'react-helmet'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Link, BrowserRouter as Router } from 'react-router-dom';
-
+import { Menu } from '../components';
 import { IconLogo } from './icons';
 import styled from 'styled-components'
 import { throttle } from '../utils'
@@ -369,7 +369,7 @@ const Nav = (props) => {
                     </StyledLink>
                 </StyledNav>
 
-                {/* <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} /> */}
+                <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
             </StyledContainer>
         </Router>
 
