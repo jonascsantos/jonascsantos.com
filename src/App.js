@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Typical from 'react-typical'
 import ReactGa from 'react-ga'
-import { useLocation } from "react-router-dom";
-import { Loader, Nav } from './components';
+import { Loader, Nav, Social, About } from './components';
 import styled from 'styled-components'
+import { GlobalStyle } from '../src/styles'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { theme, mixins, media } from '../src/styles';
+
+const { colors, fontSizes, fonts, loaderDelay } = theme;
 
 const StyledContent = styled.div`
   display: flex;
@@ -15,6 +18,7 @@ const StyledContent = styled.div`
 function App() {
   const isHome = true;
   //const isHome = location.pathname === '/'; 
+  const [isMounted, setIsMounted] = useState(!isHome);
   const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {
@@ -34,6 +38,14 @@ function App() {
   }, [isLoading]);
 
   useEffect(() => {
+    setTimeout(
+      () =>
+        setIsMounted(true)
+      , 100,
+    )
+  });
+
+  useEffect(() => {
     ReactGa.initialize('UA-152578899-1')
     ReactGa.pageview('/')
   }, [])
@@ -45,69 +57,29 @@ function App() {
     })
   }
 
+  const timeout = isHome ? loaderDelay : 0;
+  const fadeClass = isHome ? 'fade' : '';
+  const fadeUpClass = isHome ? 'fadeup' : '';
+
   return (
     <div className="App">
+
+      <GlobalStyle />
+
       {isLoading && isHome ? (
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
           <StyledContent>
-            <Nav isHome={isHome} ClickHandler={() => ClickHandler('resume')}/>
-            <main className="Main">
-              <div>
-                <img
-                  src="./images/me.jpeg"
-                  className="Photo shadowed"
-                  alt="logo"
-                />
-              </div>
-              <h1>Hi, I'm Jonas dos Santos</h1>
-              <p>
-                I'm {' '}
-                <Typical
-                  loop={Infinity}
-                  wrapper="b"
-                  steps={[
-                    'a Fullstack Developer 💻',
-                    1500,
-                    'a Brazilian student 🇧🇷',
-                    1500,
-                    'an Open Sourcer ✅',
-                    1500,
-                    "a designer 🖌️ (still trying xD)",
-                    1500,
-                    "a dreamer 🚀",
-                    3000,
-                  ]}
-                />
-              </p>
-              <div class="icon-wrap flex row">
-                <a href="https://github.com/jonascsantos" onClick={() => ClickHandler('github')}>
-                  <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-github" color="dark"></ion-icon>
-                  </div>
-                </a>
-                <a href="https://www.linkedin.com/in/jonascsantos" onClick={() => ClickHandler('linkedin')}>
-                  <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-linkedin" color="dark"></ion-icon>
-                  </div>
-                </a>
-                <a href="https://www.instagram.com/jonas.cass/" onClick={() => ClickHandler('instagram')}>
-                  <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-instagram" color="dark"></ion-icon>
-                  </div>
-                </a>
-                <a href="https://twitter.com/jonascsantos_" onClick={() => ClickHandler('twitter')}>
-                  <div class="flex shadowed translucent icon">
-                    <ion-icon name="logo-twitter" color="dark"></ion-icon>
-                  </div>
-                </a>
-                <a href="mailto:jonas.cassiano@hotmail.com" onClick={() => ClickHandler('email')}>
-                  <div class="flex shadowed translucent icon">
-                    <ion-icon name="at" color="dark"></ion-icon>
-                  </div>
-                </a>
-              </div>
-            </main>
+            <Nav isHome={isHome} ClickHandler={() => ClickHandler('resume')} />
+            <TransitionGroup component={null}>
+              {isMounted && (<CSSTransition classNames={fadeClass} timeout={timeout}>
+                <main className="Main">
+                  <About isHome={isHome}/>
+                  <Social isHome={isHome} ClickHandler={ClickHandler} />
+                </main>
+              </CSSTransition>
+              )}
+            </TransitionGroup>
           </StyledContent>
         )}
     </div>
