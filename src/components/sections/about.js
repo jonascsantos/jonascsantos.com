@@ -1,10 +1,10 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components'
 import Typical from 'react-typical'
-import { theme, mixins, media } from '../../styles';
+import { theme } from '../../styles';
 
-const { colors, fontSizes, fonts, loaderDelay } = theme;
+const { loaderDelay } = theme;
 
 const StyledContainer = styled.div`
     display: flex;
@@ -37,7 +37,7 @@ const About = ({ isHome }) => {
     return (
         <TransitionGroup component={null}>
             {isMounted && (
-                <CSSTransition classNames={fadeUpClass} timeout={timeout * 10}>
+                <CSSTransition classNames={fadeUpClass} timeout={timeout * 18}>
                     <StyledContainer>
 
                         <StyledPhotoContainer>

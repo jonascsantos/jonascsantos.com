@@ -1,14 +1,48 @@
-import React, { Component, useEffect, useState } from 'react';
-import Helmet from 'react-helmet'
+import React, { useEffect, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
-import { Menu } from '../components';
-import { IconLogo } from './icons';
 import styled from 'styled-components'
-import { throttle } from '../utils'
-import { theme, mixins, media } from '../styles';
+import { theme } from '../styles';
 
-const { colors, fontSizes, fonts, loaderDelay } = theme;
+const { loaderDelay, colors } = theme;
+
+const StyledSocialContainer = styled.div`
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+`;
+
+const StyledSocialIcon = styled.div`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f6f6f6;
+    cursor: pointer;
+    height: 5em;
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 11px var(--box-shadow);
+    transition: all 0.7s ease;
+    opacity: 0.9;
+    transition: all 0.7s ease;
+
+    @media (min-width: 0px) and (max-width: 799px) {
+        height: 2.5em;
+    }
+
+    &:hover{
+        transform: scale(1.02);
+        box-shadow: 0px 5px 20px ${colors.boxShadow};
+        opacity: 1;
+    }
+`;
+
+
 
 const Social = ({ isHome, ClickHandler }) => {
     const [isMounted, setIsMounted] = useState(!isHome);
@@ -23,39 +57,38 @@ const Social = ({ isHome, ClickHandler }) => {
 
     const timeout = isHome ? loaderDelay : 0;
     const fadeClass = isHome ? 'fade' : '';
-    const fadeDownClass = isHome ? 'fadedown' : '';
 
     return (
         <TransitionGroup component={null}>
             {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>
-                    <div className="icon-wrap flex row">
+                    <StyledSocialContainer>
                         <a href="https://github.com/jonascsantos" onClick={() => ClickHandler('github')}>
-                            <div className="flex shadowed translucent icon">
+                            <StyledSocialIcon> 
                                 <ion-icon name="logo-github" color="dark"></ion-icon>
-                            </div>
+                            </StyledSocialIcon>
                         </a>
                         <a href="https://www.linkedin.com/in/jonascsantos" onClick={() => ClickHandler('linkedin')}>
-                            <div className="flex shadowed translucent icon">
+                            <StyledSocialIcon> 
                                 <ion-icon name="logo-linkedin" color="dark"></ion-icon>
-                            </div>
+                            </StyledSocialIcon>
                         </a>
                         <a href="https://www.instagram.com/jonas.cass/" onClick={() => ClickHandler('instagram')}>
-                            <div className="flex shadowed translucent icon">
+                            <StyledSocialIcon> 
                                 <ion-icon name="logo-instagram" color="dark"></ion-icon>
-                            </div>
+                            </StyledSocialIcon>
                         </a>
                         <a href="https://twitter.com/jonascsantos_" onClick={() => ClickHandler('twitter')}>
-                            <div className="flex shadowed translucent icon">
+                            <StyledSocialIcon> 
                                 <ion-icon name="logo-twitter" color="dark"></ion-icon>
-                            </div>
+                            </StyledSocialIcon>
                         </a>
                         <a href="mailto:jonas.cassiano@hotmail.com" onClick={() => ClickHandler('email')}>
-                            <div className="flex shadowed translucent icon">
+                            <StyledSocialIcon> 
                                 <ion-icon name="at" color="dark"></ion-icon>
-                            </div>
+                            </StyledSocialIcon>
                         </a>
-                    </div>
+                    </StyledSocialContainer>
                 </CSSTransition>
             )}
         </TransitionGroup>
