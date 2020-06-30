@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import React from 'react'
+import { Link, BrowserRouter as Router } from 'react-router-dom'
 
-import styled from 'styled-components';
-import { theme, mixins, media } from '../styles';
-const { colors, fontSizes, fonts } = theme;
+import styled from 'styled-components'
+import { theme, mixins, media } from '../styles'
+const { colors, fontSizes, fonts } = theme
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -19,7 +19,7 @@ const StyledContainer = styled.div`
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   display: none;
   ${media.tablet`display: block;`};
-`;
+`
 const Sidebar = styled.aside`
   ${mixins.flexCenter};
   flex-direction: column;
@@ -35,20 +35,20 @@ const Sidebar = styled.aside`
   ${media.thone`padding: 25px;`};
   ${media.phablet`width: 75vw;`};
   ${media.tiny`padding: 10px;`};
-`;
+`
 const NavLinks = styled.nav`
   ${mixins.flexBetween};
   width: 100%;
   flex-direction: column;
   text-align: center;
   color: ${colors.black};
-`;
+`
 const NavList = styled.ol`
   padding: 0;
   margin: 0;
   list-style: none;
   width: 100%;
-`;
+`
 const NavListItem = styled.li`
   margin: 0 auto 20px;
   position: relative;
@@ -58,25 +58,24 @@ const NavListItem = styled.li`
     font-size: ${fontSizes.md};
   `};
   ${media.tiny`font-size: ${fontSizes.smish};`};
-  
-`;
+`
 const NavLink = styled(Link)`
   ${mixins.link};
   padding: 3px 20px 20px;
   width: 100%;
-`;
+`
 const ResumeLink = styled.a`
   ${mixins.bigButton};
   padding: 18px 50px;
   margin: 10% auto 0;
   width: max-content;
-`;
+`
 
 const navLinks = [
-  // {
-  //     name: 'About',
-  //     url: '/#about',
-  // },
+  {
+    name: 'Blog (Under Development)',
+    url: 'https://blog.jonascsantos.com'
+  }
   // {
   //     name: 'Projects',
   //     url: '/#projects',
@@ -93,19 +92,18 @@ const navLinks = [
   //     name: 'Contact',
   //     url: 'https://jonascsantos.com',
   // },
+]
 
-];
-
-const Menu = ({ menuOpen, toggleMenu, ClickHandler}) => {
+const Menu = ({ menuOpen, toggleMenu, ClickHandler }) => {
   const handleMenuClick = e => {
-    const target = e.target;
-    const isLink = target.hasAttribute('href');
-    const isNotMenu = target.classList && target.classList[0].includes('StyledContainer');
+    const target = e.target
+    const isLink = target.hasAttribute('href')
+    const isNotMenu = target.classList && target.classList[0].includes('StyledContainer')
 
     if (isLink || isNotMenu) {
-      toggleMenu();
+      toggleMenu()
     }
-  };
+  }
 
   return (
     <Router>
@@ -113,21 +111,26 @@ const Menu = ({ menuOpen, toggleMenu, ClickHandler}) => {
         menuOpen={menuOpen}
         onClick={handleMenuClick}
         aria-hidden={!menuOpen}
-        tabIndex={menuOpen ? 1 : -1}>
+        tabIndex={menuOpen ? 1 : -1}
+      >
         <Sidebar>
           <NavLinks>
             <NavList>
               {navLinks &&
-                navLinks.map(({ url, name }, i) => (
-                  <NavListItem key={i}>
-                    <NavLink to={url}>{name}</NavLink>
-                  </NavListItem>
-                ))}
+                navLinks.map(({ url, name }, i) =>
+                  /^https?:\/\//.test(url) ? (
+                    <a href={url}>{name}  </a>
+                  ) : (
+                    <NavListItem key={i}>
+                      <NavLink to={url}>{name}</NavLink>
+                    </NavListItem>
+                  )
+                )}
             </NavList>
             <ResumeLink
-              href="/resume.pdf"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
+              href='/resume.pdf'
+              target='_blank'
+              rel='nofollow noopener noreferrer'
               onClick={() => ClickHandler()}
             >
               Resume
@@ -136,8 +139,7 @@ const Menu = ({ menuOpen, toggleMenu, ClickHandler}) => {
         </Sidebar>
       </StyledContainer>
     </Router>
+  )
+}
 
-  );
-};
-
-export default Menu;
+export default Menu
