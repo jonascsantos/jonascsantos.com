@@ -357,7 +357,7 @@ const Nav = (props) => {
                                             href="/resume.pdf"
                                             target="_blank"
                                             rel="nofollow noopener noreferrer"
-                                            onClick={() => props.ClickHandler()}
+                                            onClick={() => props.ClickHandler('resume')}
                                             >
                                             Resume
                                         </StyledResumeButton>
@@ -368,7 +368,7 @@ const Nav = (props) => {
                     </StyledLink>
                 </StyledNav>
 
-                <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} ClickHandler={() => props.ClickHandler()} />
+                <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} ClickHandler={props.ClickHandler} />
             </StyledContainer>
         </Router>
 

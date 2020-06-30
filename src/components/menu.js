@@ -98,9 +98,8 @@ const Menu = ({ menuOpen, toggleMenu, ClickHandler }) => {
   const handleMenuClick = e => {
     const target = e.target
     const isLink = target.hasAttribute('href')
-    const isNotMenu = target.classList && target.classList[0].includes('StyledContainer')
 
-    if (isLink || isNotMenu) {
+    if (isLink) {
       toggleMenu()
     }
   }
@@ -119,7 +118,8 @@ const Menu = ({ menuOpen, toggleMenu, ClickHandler }) => {
               {navLinks &&
                 navLinks.map(({ url, name }, i) =>
                   /^https?:\/\//.test(url) ? (
-                    <a href={url}>{name}  </a>
+                    <a href={url} key={i} onClick={() => ClickHandler(name)} >{name}</a>
+                    
                   ) : (
                     <NavListItem key={i}>
                       <NavLink to={url}>{name}</NavLink>
@@ -131,7 +131,7 @@ const Menu = ({ menuOpen, toggleMenu, ClickHandler }) => {
               href='/resume.pdf'
               target='_blank'
               rel='nofollow noopener noreferrer'
-              onClick={() => ClickHandler()}
+              onClick={() => ClickHandler('resume')}
             >
               Resume
             </ResumeLink>

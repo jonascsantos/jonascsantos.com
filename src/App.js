@@ -70,7 +70,7 @@ function App() {
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
           <StyledContent>
-            <Nav isHome={isHome} ClickHandler={() => ClickHandler('resume')} />
+            <Nav isHome={isHome} ClickHandler={ClickHandler} />
             <TransitionGroup component={null}>
               {isMounted && (<CSSTransition classNames={fadeClass} timeout={timeout}>
                 <main className="Main">
