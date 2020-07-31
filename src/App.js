@@ -46,7 +46,11 @@ function App() {
   });
 
   useEffect(() => {
-    ReactGa.initialize('UA-152578899-1')
+    ReactGa.initialize('UA-152578899-1', {
+        gaOptions: {
+          siteSpeedSampleRate: 100
+        }
+    })
     ReactGa.pageview('/')
   }, [])
 
