@@ -51,6 +51,8 @@ function App() {
           siteSpeedSampleRate: 100
         }
     })
+
+    ReactGa.ga('set', 'exp', '9wDfYnldTQKFqvMPEdqBvA.0');
     ReactGa.pageview('/')
   }, [])
 
