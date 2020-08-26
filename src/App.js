@@ -52,7 +52,7 @@ function App() {
         }
     })
 
-    ReactGa.ga('set', 'exp', '9wDfYnldTQKFqvMPEdqBvA.0');
+    ReactGa.ga('set', 'exp', 'pOslSCQlSMOW_Igi7AANzA.0');
     ReactGa.pageview('/')
   }, [])
 
