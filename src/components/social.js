@@ -83,7 +83,7 @@ const Social = ({ isHome, ClickHandler }) => {
                                 <ion-icon name="logo-twitter" color="dark"></ion-icon>
                             </StyledSocialIcon>
                         </a>
-                        <a href="mailto:jonas.cassiano@hotmail.com" onClick={() => ClickHandler('email')}>
+                        <a href="mailto:dev@jonascsantos.com" onClick={() => ClickHandler('email')}>
                             <StyledSocialIcon> 
                                 <ion-icon name="at" color="dark"></ion-icon>
                             </StyledSocialIcon>
