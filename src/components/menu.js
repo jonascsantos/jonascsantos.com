@@ -72,10 +72,10 @@ const ResumeLink = styled.a`
 `
 
 const navLinks = [
-  {
-    name: 'Blog (Under Development)',
-    url: 'https://blog.jonascsantos.com'
-  }
+  // {
+  //   name: 'Blog (Under Development)',
+  //   url: 'https://blog.jonascsantos.com'
+  // }
   // {
   //     name: 'Projects',
   //     url: '/#projects',
