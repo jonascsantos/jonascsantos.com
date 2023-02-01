@@ -69,6 +69,7 @@ const ResumeLink = styled.a`
   padding: 18px 50px;
   margin: 10% auto 0;
   width: max-content;
+  border: none;
 `
 
 const navLinks = [

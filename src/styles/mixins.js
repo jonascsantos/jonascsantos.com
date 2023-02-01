@@ -72,9 +72,9 @@ const mixins = {
 
   smallButton: css`
     display: flex;
-    color: ${colors.green};
-    background-color: ${colors.white};
-    border: 1px solid ${colors.green};
+    color: white;
+    background-color: #53CDA6;
+    border: none;
     border-radius: ${theme.borderRadius};
     padding: 0.75rem 1rem;
     line-height: 1;
