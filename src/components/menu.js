@@ -64,13 +64,11 @@ const NavLink = styled(Link)`
   padding: 3px 20px 20px;
   width: 100%;
 `
+
 const ResumeLink = styled.a`
-  ${mixins.bigButton};
-  padding: 18px 50px;
-  margin: 10% auto 0;
-  width: max-content;
-  border: none;
-`
+  ${mixins.smallButton};
+  margin-left: 10px;
+`;
 
 const navLinks = [
   // {
